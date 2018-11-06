@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/consulta', 'ConsultaAPI@ConsultaApi');
+Route::get('/pagina', function(){
+    return view('pagina');
+});
