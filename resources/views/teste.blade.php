@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -70,11 +71,8 @@
 
 
             <div class="content">
-                <div class="title m-b-md">
-                    Coins
-                </div>
                 <div>
-                    <table class="table table-striped">
+                    <table class="table table-striped cell-border" id="cap_monitor">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Id</th>
@@ -118,7 +116,23 @@
             </div>
         </div>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+        <<script>
+            $(function () {
+                $('#cap_monitor').dataTable({
+                    "bProcessing": true,
+                    "sAutoWidth": false,
+                    "bDestroy": true,
+                    "sPaginationType": "bootstrap", // full_numbers
+                    "iDisplayStart ": 10,
+                    "iDisplayLength": 10,
+                    "bPaginate": false, //hide pagination
+                    "bFilter": true, //hide Search bar
+                    "bInfo": false, // hide showing entries
+                });
+            });
+        </script>
     </body>
 </html>
